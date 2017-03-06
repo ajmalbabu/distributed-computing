@@ -1,0 +1,71 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Cep-bank-messages",
+    "_postman_id": "6311e7b9-3c3e-c556-78c8-472d30ab86de",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "global-security-event",
+      "request": {
+        "url": "http://127.0.0.1:8082/cep-api/v1/genericEvent?customer=Peter",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"eventType\": \"Global\",\r\n  \"eventSubType\": \"Security\",\r\n  \"eventTime\": \"2017-01-01T00:00:00-06:00\"\r\n}\r\n"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "credit-card-transaction-peter",
+      "request": {
+        "url": "http://127.0.0.1:8082/cep-api/v1/customerTransactionEvent",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"customerName\": \"Peter\",\r\n\t\"transactionType\": \"CreditCard\",\r\n\t\"transactionSubType\": \"Credit\",\r\n\t\"transactionTime\": \"2017-01-01T00:00:00-06:00\",\r\n\t\"transactionAmount\": 50.50,\r\n\t\"transactionCurrency\": \"$\"\r\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "name": "bank-transaction-peter",
+      "request": {
+        "url": "http://127.0.0.1:8082/cep-api/v1/customerTransactionEvent",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"customerName\": \"Peter\",\r\n\t\"transactionType\": \"Bank\",\r\n\t\"transactionSubType\": \"Withdraw\",\r\n\t\"transactionTime\": \"2017-01-01T00:00:00-06:00\",\r\n\t\"transactionAmount\": 100,\r\n\t\"transactionCurrency\": \"$\"\r\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    }
+  ]
+}

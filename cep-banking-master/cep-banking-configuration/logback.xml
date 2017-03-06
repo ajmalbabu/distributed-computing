@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <timestamp key="byDay" datePattern="yyyyMMdd'T'HHmmss"/>
+
+    <contextListener class="org.akka.util.lib.LoggerStartupListener"/>
+
+    <logger name="org.apache.kafka" level="info"/>
+
+    <logger name="org.apache.tomcat.util" level="info"/>
+
+    <logger name="com.datastax.driver.core" level="info"/>
+
+
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${HOSTNAME} %d{yyyy-MM-dd HH:mm:ss.SSS} %X{transactionId} %-5level [%thread] %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="rollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>true</prudent>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover. Make sure the path matches the one in the file stateElement or else
+             the rollover logs are placed in the working directory. -->
+            <fileNamePattern>${LOG_DIRECTORY}/${LOG_NAME}_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>500MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 1 days' worth of history -->
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${HOSTNAME} %d{yyyy-MM-dd HH:mm:ss.SSS} %X{transactionId} %-5level [%thread] %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+
+    </appender>
+    <appender name="ASYNC10000" class="ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>10000</queueSize>
+        <appender-ref ref="consoleAppender"/>
+        <!--<appender-ref ref="rollingFileAppender"/>-->
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="ASYNC10000"/>
+    </root>
+</configuration>

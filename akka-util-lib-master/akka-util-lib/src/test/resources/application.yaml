@@ -1,0 +1,26 @@
+---
+spring.profiles.active: isolate,test
+akka.util.lib:
+  #  Make sure this is equivalent to number of nodes in AKKA cluster times 10.
+  number.of.shards: 10
+  config.file.name: org.akka.util.lib.conf
+  actor.system.name: AkkaUtilLibActorSystem
+  cluster.shards.config:
+    clusterShardList:
+      -
+        shardRegionName: SampleShardRegion
+        shardActorClass: org.akka.util.lib.SampleAnomalyDetector
+        parameters:
+          anomaly.publisher.bean: observableAnomalyPublisher
+          anomaly.trigger.time.secs: 1
+      -
+        shardRegionName: MessageExpiryShardRegion
+        shardActorClass: org.akka.util.lib.MessageExpiryDetector
+        parameters:
+          actor.state.message.expiry.millis: 200
+      -
+        shardRegionName: ActorRemovalShardRegion
+        shardActorClass: org.akka.util.lib.ActorWithTimeToLive
+        parameters:
+          actor.state.message.expiry.millis: 10000
+          actor.TTL.seconds: 2

@@ -1,0 +1,13 @@
+---
+server:
+  address: localhost
+  port: 8082
+akka:
+  number.of.shards: 10
+cassandra:
+  keySpace: system # Change this to a application keyspace.
+  contactPoints: localhost
+  port: 9042
+management:
+  port: 8083
+

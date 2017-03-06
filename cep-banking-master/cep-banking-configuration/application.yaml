@@ -1,0 +1,19 @@
+---
+# CEP specific configuration
+akka.util.lib:
+  config.file.name: banking.cep.akka.conf
+  actor.system.name: BankingCepActorSystem
+  cluster.shards.config:
+    clusterShardList:
+      # Showcase how to generate anomaly via esper engine for multiple stream of events.
+      -
+        shardRegionName: BankAndCreditCardShardRegion
+        shardActorClass: com.cep.bank.service.anomaly.transaction.BankAndCreditCardAnomalyDetector
+        parameters:
+          anomaly.publisher.bean: consoleAnomalyPublisher
+# Other configurations follow
+server:
+  context-path: /cep-api
+management:
+  context-path: /actuator
+spring.output.ansi.enabled: ALWAYS

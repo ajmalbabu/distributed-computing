@@ -1,0 +1,21 @@
+<assembly>
+    <key>static</key>
+    <formats>
+        <format>tar</format>
+    </formats>
+    <baseDirectory>/</baseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>./</directory>
+            <outputDirectory>cep-configuration</outputDirectory>
+            <excludes>
+                <exclude>test-transactionAmount/**</exclude>
+                <exclude>target/**</exclude>
+                <exclude>pom.xml</exclude>
+                <exclude>*.iml</exclude>
+                <exclude>tar-config-assembly.xml</exclude>
+            </excludes>
+            <!--<lineEnding>unix</lineEnding>-->
+        </fileSet>
+    </fileSets>
+</assembly>

@@ -1,0 +1,17 @@
+---
+# All properties for service module unit testing is here. This configuration file is reusable to all modules that
+# depends on servie module without duplicating properties in those module's test cases, simply declare below in
+# their application.yaml file  spring.profiles.active: service-test
+#
+# CEP specific configuration
+akka.util.lib:
+  config.file.name: banking.cep.akka.conf
+  actor.system.name: BankingCepActorSystem
+  cluster.shards.config:
+    clusterShardList:
+      # Showcase how to generate anomaly via esper engine for multiple stream of events.
+      -
+        shardRegionName: BankAndCreditCardShardRegion
+        shardActorClass: com.cep.bank.service.anomaly.transaction.BankAndCreditCardAnomalyDetector
+        parameters:
+          anomaly.publisher.bean: observableAnomalyPublisher

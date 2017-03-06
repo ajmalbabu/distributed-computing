@@ -1,0 +1,73 @@
+{
+  "id": "6311e7b9-3c3e-c556-78c8-472d30ab86de",
+  "name": "Cep-bank-messages",
+  "description": "",
+  "order": [
+    "c520eb28-b1c0-b9ab-9d52-baae26475cfe",
+    "a6ab1ec0-a3ea-99cb-0d21-c2ff8c1e1dd0",
+    "11afd4ba-6309-640b-cd4e-b423d2690296"
+  ],
+  "folders": [],
+  "timestamp": 1487086647253,
+  "owner": 0,
+  "public": false,
+  "requests": [
+    {
+      "id": "11afd4ba-6309-640b-cd4e-b423d2690296",
+      "headers": "Content-Type: application/json\n",
+      "url": "http://127.0.0.1:8082/cep-api/v1/customerTransactionEvent",
+      "preRequestScript": null,
+      "pathVariables": {},
+      "method": "POST",
+      "data": [],
+      "dataMode": "raw",
+      "tests": null,
+      "currentHelper": "normal",
+      "helperAttributes": {},
+      "time": 1487088094709,
+      "name": "bank-transaction-peter",
+      "description": "",
+      "collectionId": "6311e7b9-3c3e-c556-78c8-472d30ab86de",
+      "responses": [],
+      "rawModeData": "{\r\n\t\"customerName\": \"Peter\",\r\n\t\"transactionType\": \"Bank\",\r\n\t\"transactionSubType\": \"Withdraw\",\r\n\t\"transactionTime\": \"2017-01-01T00:00:00-06:00\",\r\n\t\"transactionAmount\": 100,\r\n\t\"transactionCurrency\": \"$\"\r\n}"
+    },
+    {
+      "id": "a6ab1ec0-a3ea-99cb-0d21-c2ff8c1e1dd0",
+      "headers": "Content-Type: application/json\n",
+      "url": "http://127.0.0.1:8082/cep-api/v1/customerTransactionEvent",
+      "preRequestScript": null,
+      "pathVariables": {},
+      "method": "POST",
+      "data": [],
+      "dataMode": "raw",
+      "tests": null,
+      "currentHelper": "normal",
+      "helperAttributes": {},
+      "time": 1487088029963,
+      "name": "credit-card-transaction-peter",
+      "description": "",
+      "collectionId": "6311e7b9-3c3e-c556-78c8-472d30ab86de",
+      "responses": [],
+      "rawModeData": "{\r\n\t\"customerName\": \"Peter\",\r\n\t\"transactionType\": \"CreditCard\",\r\n\t\"transactionSubType\": \"Credit\",\r\n\t\"transactionTime\": \"2017-01-01T00:00:00-06:00\",\r\n\t\"transactionAmount\": 50.50,\r\n\t\"transactionCurrency\": \"$\"\r\n}"
+    },
+    {
+      "id": "c520eb28-b1c0-b9ab-9d52-baae26475cfe",
+      "headers": "Content-Type: application/json\n",
+      "url": "http://127.0.0.1:8082/cep-api/v1/genericEvent?customer=Peter",
+      "preRequestScript": null,
+      "pathVariables": {},
+      "method": "POST",
+      "data": [],
+      "dataMode": "raw",
+      "tests": null,
+      "currentHelper": "normal",
+      "helperAttributes": {},
+      "time": 1487188356887,
+      "name": "global-security-event",
+      "description": "",
+      "collectionId": "6311e7b9-3c3e-c556-78c8-472d30ab86de",
+      "responses": [],
+      "rawModeData": "{\r\n  \"eventType\": \"Global\",\r\n  \"eventSubType\": \"Security\",\r\n  \"eventTime\": \"2017-01-01T00:00:00-06:00\"\r\n}\r\n"
+    }
+  ]
+}

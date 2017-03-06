@@ -1,0 +1,2 @@
+---
+spring.profiles.active: isolate,test,service-test
