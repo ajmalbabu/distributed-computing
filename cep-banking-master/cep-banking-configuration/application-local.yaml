@@ -5,7 +5,10 @@ server:
 akka:
   number.of.shards: 10
 cassandra:
-  keySpace: system # Change this to a application keyspace. Cassandra driver needs a keyspace and using system keyspace for now to make it easy to get going but is a BAD practice
+  keySpace: system # Change this to a application keyspace. Cassandra driver is needed for
+  # AKKA persistence. The driver needs a keyspace, though AKKA persistence uses 'akka' keyspace.
+  # Provide some existing 'system' keyspace for driver to get registered and make it easy to get going but
+  # provide an application keyspace instead of using 'system' keyspace.
   contactPoints: localhost
   port: 9042
 management:
