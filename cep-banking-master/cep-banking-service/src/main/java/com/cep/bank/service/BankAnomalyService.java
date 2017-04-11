@@ -5,7 +5,7 @@ import akka.actor.ActorRef;
 import akka.cluster.sharding.ClusterSharding;
 import com.cep.bank.service.domain.CustomerTransactionEvent;
 import com.cep.bank.service.domain.GenericEvent;
-import akka.sdk.AkkaManager;
+import akka.initializer.AkkaManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

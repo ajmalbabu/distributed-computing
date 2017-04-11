@@ -4,11 +4,11 @@ import akka.actor.ActorRef;
 import akka.routing.FromConfig;
 import com.cep.bank.service.domain.CustomerTransactionEvent;
 import com.cep.bank.service.domain.GenericEvent;
-import akka.sdk.AkkaManager;
-import akka.sdk.AnomalyPublisher.Anomaly;
-import akka.sdk.AnomalyPublisher.ObservableAnomalyPublisher;
-import akka.sdk.SpringExtension;
-import akka.sdk.model.ResponseMessage;
+import akka.initializer.AkkaManager;
+import akka.initializer.AnomalyPublisher.Anomaly;
+import akka.initializer.AnomalyPublisher.ObservableAnomalyPublisher;
+import akka.initializer.SpringExtension;
+import akka.initializer.model.ResponseMessage;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static akka.sdk.ResponseHandlerActor.*;
-import static akka.sdk.model.ResponseMessage.ResponseType.MessageProcessed;
+import static akka.initializer.ResponseHandlerActor.*;
+import static akka.initializer.model.ResponseMessage.ResponseType.MessageProcessed;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)

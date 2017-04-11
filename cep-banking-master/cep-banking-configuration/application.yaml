@@ -1,6 +1,6 @@
 ---
 # CEP specific configuration
-akka.sdk:
+akka.initializer:
   config.file.name: banking.cep.akka.conf
   actor.system.name: BankingCepActorSystem
   cluster.shards.config:

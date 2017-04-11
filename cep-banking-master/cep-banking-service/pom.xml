@@ -20,8 +20,8 @@
     <dependencies>
 
         <dependency>
-            <groupId>akka-sdk</groupId>
-            <artifactId>akka-sdk</artifactId>
+            <groupId>akka-initializer</groupId>
+            <artifactId>akka-initializer</artifactId>
         </dependency>
 
         <dependency>
