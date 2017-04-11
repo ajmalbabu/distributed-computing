@@ -211,7 +211,7 @@ public abstract class PersistenceActor extends UntypedPersistentActor {
         if (msg instanceof HeartBeatMessage) {
 
             LOGGER.info("Received heart beat {}", msg);
-            sender().tell(new ResponseMessage(ResponseMessage.ResponseType.MessageProcessed, null), ActorRef.noSender());
+            getSender().tell(new ResponseMessage(ResponseMessage.ResponseType.MessageProcessed, null), ActorRef.noSender());
 
         } else {
             LOGGER.debug("Continue the process {}", lastCommandMessage);
@@ -300,7 +300,7 @@ public abstract class PersistenceActor extends UntypedPersistentActor {
 
 
     protected void acknowledge() {
-        sender().tell(new ResponseMessage(ResponseMessage.ResponseType.MessageProcessed, lastCommandMessage), ActorRef.noSender());
+        getSender().tell(new ResponseMessage(ResponseMessage.ResponseType.MessageProcessed, lastCommandMessage), ActorRef.noSender());
     }
 
     private void setMdc(Object message) {
