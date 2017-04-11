@@ -2,7 +2,7 @@
 <configuration>
     <timestamp key="byDay" datePattern="yyyyMMdd'T'HHmmss"/>
 
-    <contextListener class="org.akka.util.lib.LoggerStartupListener"/>
+    <contextListener class="akka.sdk.LoggerStartupListener"/>
 
     <logger name="org.apache.kafka" level="info"/>
 

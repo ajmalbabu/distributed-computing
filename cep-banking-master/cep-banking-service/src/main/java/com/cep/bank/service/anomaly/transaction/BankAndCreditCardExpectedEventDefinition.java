@@ -5,7 +5,7 @@ import com.cep.bank.service.domain.GenericEvent;
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPServiceProvider;
 import com.espertech.esper.client.EPServiceProviderManager;
-import org.akka.util.lib.AnomalyPublisher;
+import akka.sdk.AnomalyPublisher;
 
 /**
  * Configures all the types of expected events so that these event types can be refereed in the rule author module.

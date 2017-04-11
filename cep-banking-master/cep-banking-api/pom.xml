@@ -23,7 +23,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.akka.util.lib</groupId>
+            <groupId>akka.sdk</groupId>
             <artifactId>akka-util-lib</artifactId>
         </dependency>
 

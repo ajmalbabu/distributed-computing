@@ -2,8 +2,8 @@ package com.cep.bank.service.anomaly.transaction;
 
 import com.espertech.esper.client.EventBean;
 import com.espertech.esper.client.UpdateListener;
-import org.akka.util.lib.AnomalyPublisher;
-import org.akka.util.lib.AnomalyPublisher.Anomaly;
+import akka.sdk.AnomalyPublisher;
+import akka.sdk.AnomalyPublisher.Anomaly;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

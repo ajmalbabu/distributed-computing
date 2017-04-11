@@ -1,6 +1,6 @@
 package com.cep.bank.api;
 
-import org.akka.util.lib.model.TransactionId;
+import akka.sdk.model.TransactionId;
 import org.slf4j.MDC;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import static org.akka.util.lib.model.TransactionId.TRANSACTION_ID;
+import static akka.sdk.model.TransactionId.TRANSACTION_ID;
 
 
 /**

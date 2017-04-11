@@ -3,10 +3,10 @@ package com.cep.bank.service.anomaly.transaction;
 import com.cep.bank.service.domain.BankAndCreditCardTransactionState;
 import com.cep.bank.service.domain.CustomerTransactionEvent;
 import com.cep.bank.service.domain.GenericEvent;
-import org.akka.util.lib.AnomalyPublisher;
-import org.akka.util.lib.PersistenceActor;
-import org.akka.util.lib.model.Message;
-import org.akka.util.lib.model.Parameters;
+import akka.sdk.AnomalyPublisher;
+import akka.sdk.PersistenceActor;
+import akka.sdk.model.Message;
+import akka.sdk.model.Parameters;
 import org.springframework.context.ApplicationContext;
 
 /**

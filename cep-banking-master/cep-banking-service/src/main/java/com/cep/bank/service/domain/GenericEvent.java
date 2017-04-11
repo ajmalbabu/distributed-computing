@@ -1,7 +1,7 @@
 package com.cep.bank.service.domain;
 
 
-import org.akka.util.lib.model.DefaultMessage;
+import akka.sdk.model.DefaultMessage;
 
 import java.io.Serializable;
 import java.util.Date;

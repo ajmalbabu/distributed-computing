@@ -20,8 +20,8 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.akka.util.lib</groupId>
-            <artifactId>akka-util-lib</artifactId>
+            <groupId>akka-sdk</groupId>
+            <artifactId>akka-sdk</artifactId>
         </dependency>
 
         <dependency>

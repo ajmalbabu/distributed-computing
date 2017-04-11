@@ -9,7 +9,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 
-@SpringBootApplication(scanBasePackages = "com.cep, org.akka.util.lib")
+@SpringBootApplication(scanBasePackages = "com.cep, akka.sdk")
 @EnableCaching
 public class Application {
 
