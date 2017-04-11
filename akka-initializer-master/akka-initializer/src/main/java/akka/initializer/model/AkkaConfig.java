@@ -13,7 +13,7 @@ public class AkkaConfig {
     @Value("${akka.initializer.config.file.name:}")
     private String akkaConfigFileName;
 
-    @Value("${akka.initializer.actor.system.name:AkkaUtilLibActorSystem}")
+    @Value("${akka.initializer.actor.system.name:AkkaInitializerActorSystem}")
     private String actorSystemName;
 
     public String getAkkaConfigFileName() {

@@ -4,7 +4,7 @@ akka.initializer:
   #  Make sure this is equivalent to number of nodes in AKKA cluster times 10.
   number.of.shards: 10
   config.file.name: akka.initializer.conf
-  actor.system.name: AkkaUtilLibActorSystem
+  actor.system.name: AkkaInitializerActorSystem
   cluster.shards.config:
     clusterShardList:
       -
