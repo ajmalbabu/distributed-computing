@@ -9,7 +9,7 @@ import akka.initializer.model.StopMessage;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Run them as part of separate suite or increase the expiry delay to higher number and adjust test cases delays accordingly.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringConfig.class)
+@SpringBootTest(classes = SpringConfig.class)
 public class ActorRecoveryTest {
 
     @Autowired
