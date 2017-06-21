@@ -1,23 +1,24 @@
 package akka.initializer;
 
-import akka.actor.ActorRef;
-import akka.cluster.sharding.ClusterSharding;
-import akka.routing.FromConfig;
-import akka.initializer.model.ResponseMessage;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import akka.actor.ActorRef;
+import akka.cluster.sharding.ClusterSharding;
+import akka.initializer.model.ResponseMessage;
+import akka.routing.FromConfig;
 
 /**
  * These test cases are time sensitive and may (extremely rarely) fail if run with test suite because of GC pause etc.
  * Run them as part of separate suite or increase the expiry delay to higher number and adjust test cases delays accordingly.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringConfig.class)
+@SpringBootTest(classes = SpringConfig.class)
 public class ActorTimeToLiveTest {
 
     @Autowired

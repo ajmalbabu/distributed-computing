@@ -1,30 +1,31 @@
 package akka.initializer;
 
-import akka.actor.ActorRef;
-import akka.cluster.sharding.ClusterSharding;
-import akka.routing.FromConfig;
-import akka.initializer.AnomalyPublisher.Anomaly;
-import akka.initializer.AnomalyPublisher.ObservableAnomalyPublisher;
-import akka.initializer.model.ResponseMessage;
-import akka.initializer.model.TransactionId;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import akka.actor.ActorRef;
+import akka.cluster.sharding.ClusterSharding;
+import akka.initializer.AnomalyPublisher.Anomaly;
+import akka.initializer.AnomalyPublisher.ObservableAnomalyPublisher;
+import akka.initializer.model.ResponseMessage;
+import akka.initializer.model.TransactionId;
+import akka.routing.FromConfig;
 
 
 /**
  * Read javadoc from {@link SampleAnomalyDetector}
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringConfig.class)
+@SpringBootTest(classes = SpringConfig.class)
 public class SampleAnomalyTest {
 
     private TransactionId transactionId = TransactionId.instance();

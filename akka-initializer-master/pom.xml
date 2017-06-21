@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.7.RELEASE</version>
+        <version>1.5.4.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -26,7 +26,7 @@
         <java.version>1.8</java.version>
         <spring.boot.version>1.5.1.RELEASE</spring.boot.version>
         <swagger.version>2.4.0</swagger.version>
-        <akka.framework.version>2.4.17</akka.framework.version>
+        <akka.framework.version>2.5.3</akka.framework.version>
         <akka.persistence.mock.version>1.1.1</akka.persistence.mock.version>
         <typesafe.config.version>1.3.1</typesafe.config.version>
         <junit.version>4.12</junit.version>
